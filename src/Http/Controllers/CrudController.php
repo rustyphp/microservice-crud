@@ -1,24 +1,24 @@
 <?php
 /**
  * @file
- * Contains \LushDigital\MicroServiceCrud\Http\Controllers\CrudController.
+ * Contains \biliboobrian\MicroServiceCrud\Http\Controllers\CrudController.
  */
 
-namespace LushDigital\MicroServiceCrud\Http\Controllers;
+namespace biliboobrian\MicroServiceCrud\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 use Laravel\Lumen\Routing\Controller as BaseController;
-use LushDigital\MicroServiceCore\Enum\Status;
-use LushDigital\MicroServiceCrud\Exceptions\CrudModelException;
-use LushDigital\MicroServiceCore\Traits\MicroServiceJsonResponseTrait;
+use biliboobrian\MicroServiceCore\Enum\Status;
+use biliboobrian\MicroServiceCrud\Exceptions\CrudModelException;
+use biliboobrian\MicroServiceCore\Traits\MicroServiceJsonResponseTrait;
 
 /**
  * Abstract controller class for CRUD.
  *
- * @package LushDigital\MicroServiceCrud\Http\Controllers
+ * @package biliboobrian\MicroServiceCrud\Http\Controllers
  */
 abstract class CrudController extends BaseController
 {
@@ -29,14 +29,14 @@ abstract class CrudController extends BaseController
      *
      * @var string
      */
-    const MICROSERVICE_BASE_MODEL_CLASS = 'LushDigital\\MicroServiceModelUtils\\Models\\MicroServiceBaseModel';
+    const MICROSERVICE_BASE_MODEL_CLASS = 'biliboobrian\\MicroServiceModelUtils\\Models\\MicroServiceBaseModel';
 
     /**
      * Fully qualified name of the expected crud model interface.
      *
      * @var string
      */
-    const MICROSERVICE_CRUD_MODEL_INTERFACE = 'LushDigital\\MicroServiceCrud\\Models\\CrudModelInterface';
+    const MICROSERVICE_CRUD_MODEL_INTERFACE = 'biliboobrian\\MicroServiceCrud\\Models\\CrudModelInterface';
 
     /**
      * The base class of the model related to this CRUD controller.

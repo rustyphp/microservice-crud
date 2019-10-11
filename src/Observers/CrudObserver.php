@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * Contains \LushDigital\MicroServiceCrud\Observers\CrudObserver
+ * Contains \biliboobrian\MicroServiceCrud\Observers\CrudObserver
  */
 
-namespace LushDigital\MicroServiceCrud\Observers;
+namespace biliboobrian\MicroServiceCrud\Observers;
 
-use LushDigital\MicroServiceModelUtils\Contracts\Cacheable;
-use LushDigital\MicroServiceModelUtils\Traits\MicroServiceCacheTrait;
+use biliboobrian\MicroServiceModelUtils\Contracts\Cacheable;
+use biliboobrian\MicroServiceModelUtils\Traits\MicroServiceCacheTrait;
 
 /**
  * Observer class to act on CRUD item modifications.
  *
- * @package LushDigital\MicroServiceCrud\Observers.
+ * @package biliboobrian\MicroServiceCrud\Observers.
  */
 class CrudObserver
 {

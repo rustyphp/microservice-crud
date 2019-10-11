@@ -1,15 +1,15 @@
 <?php
 /**
  * @file
- * Contains \LushDigital\MicroServiceCrud\Models\CrudModelInterface.
+ * Contains \biliboobrian\MicroServiceCrud\Models\CrudModelInterface.
  */
 
-namespace LushDigital\MicroServiceCrud\Models;
+namespace biliboobrian\MicroServiceCrud\Models;
 
 /**
  * Interface that all CRUD models must implement.
  *
- * @package LushDigital\MicroServiceCrud\Models
+ * @package biliboobrian\MicroServiceCrud\Models
  */
 interface CrudModelInterface
 {
