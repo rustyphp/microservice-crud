@@ -30,6 +30,13 @@ abstract class CrudController extends BaseController
      * @var string
      */
     const MICROSERVICE_BASE_MODEL_CLASS = 'biliboobrian\\MicroServiceModelUtils\\Models\\MicroServiceBaseModel';
+/**
+     * Fully qualified name of the expected base model class.
+     *
+     * @var string
+     */
+    const MICROSERVICE_BASE_ORACLE_MODEL_CLASS = 'biliboobrian\\MicroServiceModelUtils\\Models\\MicroServiceBaseOracleModel';
+
 
     /**
      * Fully qualified name of the expected crud model interface.
@@ -82,7 +89,7 @@ abstract class CrudController extends BaseController
     {
         // Check the cache for data. Otherwise get from the db.
         $items = Cache::rememberForever($this->modelTableName . ':index', function () {
-            return call_user_func([$this->getModelClass(), 'all'])->toArray();
+            return call_user_func([$this->getModelClass(), 'take'], 200)->get()->toArray();
         });
 
         if (empty($items)) {
@@ -234,7 +241,7 @@ abstract class CrudController extends BaseController
         }
 
         // Validate the model extends the correct base model.
-        if (!is_subclass_of($modelClass, self::MICROSERVICE_BASE_MODEL_CLASS)) {
+        if (!(is_subclass_of($modelClass, self::MICROSERVICE_BASE_MODEL_CLASS) || is_subclass_of($modelClass, self::MICROSERVICE_BASE_ORACLE_MODEL_CLASS))) {
             throw new CrudModelException('The related model must extend the MicroServiceBaseModel abstract class.');
         }
 
