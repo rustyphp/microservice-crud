@@ -1,5 +1,5 @@
 {
-  "name": "biliboobrian/microservice-crud",
+  "name": "rustyphp/microservice-crud",
   "description": "A CRUD convenience layer for microservices built in Lumen.",
   "keywords": ["framework", "laravel", "lumen", "microservice", "crud"],
   "license": "MIT",
@@ -11,16 +11,16 @@
     }
   ],
   "require": {
-    "laravel/lumen-framework": "^5.3 || 6.*",
-    "biliboobrian/microservice-core": "~1.0",
-    "biliboobrian/microservice-model-utils": "~1.0"
+    "laravel/lumen-framework": "6.*"
   },
   "require-dev": {
-    "phpunit/phpunit": "~5.0"
+    "phpunit/phpunit": "~8.0"
   },
   "autoload": {
     "psr-4": {
-      "biliboobrian\\MicroServiceCrud\\": "src/"
+      "biliboobrian\\MicroServiceCrud\\": "src/",
+      "biliboobrian\\MicroServiceCore\\": "core/",
+      "biliboobrian\\MicroServiceUtils\\": "utils/"
     }
   },
   "autoload-dev": {
